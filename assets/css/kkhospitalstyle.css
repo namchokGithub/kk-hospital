@@ -1,0 +1,74 @@
+/*--------------------------------------------------------------
+//                  BTN Change language                       //
+--------------------------------------------------------------*/
+
+.btn-change-language {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 2px 5px !important;
+    border-radius: 50px;
+    margin: 10px;
+    color: #fff !important;
+    border: 2px solid #06A3DA;
+}
+
+.btn-change-language :hover {
+    background: #91daf5;
+    color: #fff !important;
+    text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------
+//                       Text Navbar                          //
+--------------------------------------------------------------*/
+
+.text-nav {
+    color: #ffffff !important;
+}
+
+.text-nav:hover {
+    color: #91daf5 !important;
+}
+
+.text-nav-scrolled {
+    color: #ffffff !important;
+}
+
+.text-nav-scrolled:hover {
+    color: #c2ecfb !important;
+}
+
+.navbar .active-page {
+    padding: 5px 5px;
+    border-radius: 10px;
+    border: 1px solid #06A3DA;
+    background: #c2ecfb39;
+}
+
+.navbar .active-page:hover {
+    padding: 5px 5px;
+    border-radius: 10px;
+    border: 1px solid #91daf5;
+    color: #023345 !important;
+    background: #c2ecfb;
+}
+
+
+/*--------------------------------------------------------------
+//                       Animate.css                          //
+--------------------------------------------------------------*/
+
+.animate__animated.animate__fadeInUp {
+    --animate-duration: 1s;
+}
+
+
+/*--------------------------------------------------------------
+//                            Menu                            //
+--------------------------------------------------------------*/
+
+.services .icon-box {
+    width: 100%;
+}
