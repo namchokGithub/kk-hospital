@@ -19,6 +19,30 @@
     text-decoration: none;
 }
 
+#rule-section .btn-get-started {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    background: #06A3DA;
+    color: #fff;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+    border: 2px solid #06A3DA;
+}
+
+#rule-section .btn-get-started:hover {
+    background: #5bc3e9;
+    color: #fff;
+    text-decoration: none;
+}
+
 
 /*--------------------------------------------------------------
 //                       Text Navbar                          //
@@ -71,4 +95,47 @@
 
 .services .icon-box {
     width: 100%;
+}
+
+.priceImage {
+    margin: 0px 0px !important;
+    padding-top: 0px !important;
+    text-align: center !important;
+}
+
+.priceImage .img-fluid {
+    max-width: 95%;
+    height: auto;
+    text-align: center !important;
+}
+
+
+/*--------------------------------------------------------------
+//                            Card                           //
+--------------------------------------------------------------*/
+
+.horizontal-scrollable>.row {
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+}
+
+.horizontal-scrollable>.row>.box {
+    display: inline-block !important;
+    float: none !important;
+}
+
+#box-submain-rules {
+    cursor: pointer;
+}
+
+#box-submain-services {
+    cursor: pointer;
+}
+
+#box-submain-doctors {
+    cursor: pointer;
+}
+
+#box-submain-about {
+    cursor: pointer;
 }

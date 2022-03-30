@@ -14,16 +14,95 @@ $(window).on('load', function() {
 
 $(document).ready(function() {
     console.log("Welcome!");
+    const gitHubPath = 'namchokGithub/kk-hospital';
+    const url = 'https://api.github.com/repos/' + gitHubPath + '/tags';
+
+    $.get(url).done(data => {
+        const versions = data.sort((v1, v2) => semver.compare(v2.name, v1.name));
+        console.log(versions[0].name)
+            // $('#result').html(versions[0].name);
+    });
 
     if (!languageIsEng) {
         changeLanguageTH()
     }
 
-    /** --------------------- Navbar ---------------------  */
+    /** --------------------- Navbar --------------------- */
+    $("#box-submain-rules").on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $("#rule-section").offset().top - 50
+        }, 1000, 'linear');
+    });
+    $("#box-submain-services").on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $("#pricing-section").offset().top - 50
+        }, 1000, 'linear');
+    });
+    $("#box-submain-doctors").on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $("#team-section").offset().top - 50
+        }, 1000, 'linear');
+    });
+    $("#box-submain-about").on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $("#footer").offset().top - 50
+        }, 1000, 'linear');
+    });
+
+    $(window).on('scroll', function(e) {
+        e.preventDefault();
+        if (($(this).scrollTop() + 250) >= $('#sub-section').offset().top && ($(this).scrollTop() + 250) < $('#rule-section').offset().top) {
+            $("#navbar>ul>li>a").removeClass("active-page");
+            $('#home').addClass("active-page");
+        } else if (($(this).scrollTop() + 250) >= $('#rule-section').offset().top && ($(this).scrollTop() + 250) < $('#pricing-section').offset().top) {
+            $("#navbar>ul>li>a").removeClass("active-page");
+            $('#rules').addClass("active-page");
+        } else if (($(this).scrollTop() + 250) >= $('#pricing-section').offset().top && ($(this).scrollTop() + 250) < $('#team-section').offset().top) {
+            $("#navbar>ul>li>a").removeClass("active-page");
+            $('#services').addClass("active-page");
+        } else if (($(this).scrollTop() + 250) >= $('#team-section').offset().top && ($(this).scrollTop() + 250) < $('#footer').offset().top) {
+            $("#navbar>ul>li>a").removeClass("active-page");
+            $('#doctors').addClass("active-page");
+        } else if (($(this).scrollTop() + 250) >= $('#footer').offset().top) {
+            $("#navbar>ul>li>a").removeClass("active-page");
+            $('#about').addClass("active-page");
+        }
+    });
+
     $('#navbar>ul>li>a:not(#lang)').click(function(e) {
         e.preventDefault();
         $("#navbar>ul>li>a").removeClass("active-page");
         $(`#${$(this).attr('id')}`).addClass("active-page");
+        if (`#${$(this).attr('id')}` === "#home") {
+            $('html, body').animate({
+                scrollTop: $("#hero").offset().top
+            }, 1000, 'linear');
+        } else if (`#${$(this).attr('id')}` === "#rules") {
+            $('html, body').animate({
+                scrollTop: $("#rule-section").offset().top - 50
+            }, 1000, 'linear');
+        } else if (`#${$(this).attr('id')}` === "#doctors") {
+            $('html, body').animate({
+                scrollTop: $("#team-section").offset().top - 50
+            }, 1000, 'linear');
+        } else if (`#${$(this).attr('id')}` === "#services") {
+            $('html, body').animate({
+                scrollTop: $("#pricing-section").offset().top - 50
+            }, 1000, 'linear');
+        } else if (`#${$(this).attr('id')}` === "#doctors") {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: $("#team-section").offset().top - 50
+            }, 1000, 'linear');
+        } else if (`#${$(this).attr('id')}` === "#about") {
+            $('html, body').animate({
+                scrollTop: $("#footer").offset().top - 50
+            }, 1000, 'linear');
+        }
     });
 
     $('.bi-list').on('click', function() {
